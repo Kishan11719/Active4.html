@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Random Numbers</title>
+</head>
+<body>
+    <h1>Random Number Generator</h1>
+
+    <!-- Button to trigger random number generation -->
+    <button onclick="generateRandomNumbers()">Generate Random Numbers</button>
+
+    <!-- Div to display the random numbers -->
+    <div id="randomNumbersOutput"></div>
+
+    <script>
+        // Function to generate and display random numbers
+        function generateRandomNumbers() {
+            let count = 0;  // Counter for how many numbers to generate
+            let maxNumbers = 5; // How many random numbers to generate
+            let randomNumbers = []; // Array to hold random numbers
+
+            // While loop to generate random numbers
+            while (count < maxNumbers) {
+                let randomNumber = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+                randomNumbers.push(randomNumber); // Add random number to the array
+                count++; // Increment the counter
+            }
+
+            // Display the random numbers using join() to create a comma-separated list
+            document.getElementById("randomNumbersOutput").innerHTML = 
+                "Random Numbers: " + randomNumbers.join(", ");
+        }
+    </script>
+</body>
+</html>
